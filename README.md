@@ -56,4 +56,5 @@ fetch(`${window.origin}/artifusion/buyer/cart`,{
 
 *It also give me an experience of storing and retrieving an image from my localhost by converting image to BLOB (a binary format)
 
+*Before this project i have uploaded few html,css,javascript files in github only through drag and drop,  but this project i cant as it has many folders nested in it drag and drop didnt work , for that i need to learn git commands to upload this project to github.
 
