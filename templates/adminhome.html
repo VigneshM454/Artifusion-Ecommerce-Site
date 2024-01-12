@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/logo3.jpg')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <style>
+        .dashboard{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(2,1fr);
+        }
+        .dashdiv{
+            border-radius: 20px; text-align: center;
+        }
+        .dashdiv:hover{
+            color: white;
+        }
+        @media screen and (max-width:350px) {
+            .dashboard{
+                display: flex;
+                flex-direction: column;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    {% include "adminheader.html" %}
+  
+   <main class="p-3" style="background-color: springgreen;">
+    <section class="sa1 container-fluid pt-3 d-flex flex-column align-items-center " id="sh">
+        <h3>Dashboard Overview</h3>
+        <br>
+        <div class="dashboard container row gap-3 bg-light p-4 w-100 h-100" style="border-radius: 20px;">
+            <div class="dashdiv col bg-secondary d-flex flex-column align-items-center " >
+                <div class="row  py-3"><h4>Total Sales</h4></div>
+                <div class="row  py-3"><h4>₹{{tot}}</h4></div>
+            </div>
+            <div class="dashdiv col bg-secondary d-flex flex-column align-items-center" >
+                <div class="row  py-3"><h4>Total Orders</h4></div>
+                <div class="row  py-3"><h4>{{ordercount}}</h4></div>
+            </div>
+            <div class="dashdiv col bg-secondary d-flex flex-column align-items-center" >
+                <div class="row  py-3"><h4>Total Users</h4></div>
+                <div class="row  py-3"><h4>{{usercount}}</h4></div>
+            </div>
+            <div class="dashdiv col bg-secondary d-flex flex-column align-items-center" >
+                <div class="row  py-3"><h4>Total Products</h4></div>
+                <div class="row  py-3"><h4>{{prodcount}}</h4></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <br>
+    <section class="sa1 d-flex justify-content-center" id="ss">
+        <div class="col-sm-12 col-md-6 col-lg-4 border border-dark border-2 d-flex flex-column  gap-3 py-2">
+            <div class="col p-2 d-flex justify-content-center align-items-center">
+                <img src="{{ url_for('static', filename='images/logo1.jpg') }}" class="rounded-circle" alt="" style="width: 80px; height: 80px;">
+            </div>
+            <div class="row d-flex p-4 ">
+                <div class="col-6">
+                    <p>Website Name</p>
+                    <p>Taxes & Shipping Charge</p>
+                    <p>Payment methods</p>
+                </div>
+                <div class="col-6">
+                    <p><b>Atrifusion</b></p>
+                    <p><b>10%</b></p>
+                    <p><br>
+                        <b>* Pay on delivery</b> <br>
+                        <b>* Pay on order</b>
+                    </p>
+                </div>
+            </div>
+            <div class="row gap-5 px-4">
+                <button class="col btn btn-outline-primary">Edit</button>
+            </div>
+        </div>
+    </section>
+   </main>
+   <br>
+    {% include "footer.html" %}
+    {% include "modal.html" %}
+
+    <script src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/foot.js')}}"></script>
+ </body>
+</html>

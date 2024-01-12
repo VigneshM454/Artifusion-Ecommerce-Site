@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/logo3.jpg')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/product.css')}}">
+</head>
+<body>
+    {% include "header.html" %}
+
+   <main class="container-fluid d-flex flex-column align-items-center p-0" style="min-height: 100vh;">
+    <section class="container-fluid bg-primary row m-0 pt-4 p-2" id="dynprod" style="min-height: 110vh;">
+        <div class="col-12 ">
+            <h1 id="prodname">{{proddata['prodname']}}</h1>
+            <h5></h5>
+            <hr>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6">
+            <!-- Carousel -->
+            <div id="carousel2" class="carousel carousel-dark slide " data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carousel2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div><!-- "D:\web program\ecommerce_original\eflask\static\images\dummy-product.jpg" -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                    <img id="img1" src="{{proddata['prodimg1'] }}"  class="imgs d-block img-fluid img-thumbnail w-100" style="max-height: 50vh; min-height: 50vh;" alt="...">
+               </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                    <img id="img2" src="{{proddata['prodimg2'] }}" class="imgs d-block img-fluid img-thumbnail w-100" style="max-height: 50vh; min-height: 50vh;" alt="...">
+               </div>
+                    <div class="carousel-item">
+                    <img id="img3" src="{{proddata['prodimg3'] }}" class="imgs d-block img-fluid img-thumbnail w-100" style="max-height: 50vh; min-height: 50vh;" alt="...">
+               </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+        </div>
+        <!---->
+        <div class="col-12 col-md-6 col-lg-6">
+            <h4>Product Description</h4>
+            <p id="prodov" >{{proddata['proddesc']}} </p>
+            <h1 id="prodprice1">₹{{proddata['prodprice']}}</h1>
+            <p>Inclusive of all taxes</p><br>
+            <p>Sold by <span id="sellername">seller</span>  and Deliver by Atrifusionlazymedia</p>
+            <div class="d-flex  ">
+                <h4 >Quantity :</h4> 
+                <div  class="mx-2">
+                    <button class="btn btn-light" onclick="sub_prod()">-</button>
+                    <span id="qt" class="p-2 ">1</span>
+                    <button class="btn btn-light" onclick="add_prod()">+</button>
+                </div>    
+            </div>
+            <br>
+
+            <div class="col d-flex flex-row gap-1">
+                <a id="addcart" class="col btn btn-outline-light">Add to Cart</a>
+                <a id="buynow" class="col btn btn-outline-light">Buy now</a>
+                <a id="addwish" class="col btn btn-outline-light">Add to wish list</a>
+            </div>
+        </div>
+        <hr>
+        <input type="hidden" id="qty-max" value="{{proddata['qtyavail']}}">
+        <input type="hidden" id="prod-id" value="{{proddata['productid']}}">
+        <input type="hidden" id="prodprice" value="{{proddata['prodprice']}}">
+      <!--  <p id="qty-max" " style="visibility: hidden;"> {{proddata['qtyavail']}}</p>
+    -->
+    </section>
+    <section class="container-fluid bg-primary row">
+    </section>
+        
+   </main>
+    {% include "footer.html" %}
+    {% include "modal.html" %}
+
+    <script src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/foot.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/prod.js') }}"></script>
+</body>
+</html>

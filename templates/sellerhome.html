@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SellerHome</title>
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/logo3.jpg')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/cart.css')}}">
+</head>
+<body class="bg-info">
+    <style>
+        .salestat{
+            border: 5px solid black;
+            border-radius: 20px;
+        }
+        .shop-img{
+            height: 80vh;
+            width: 70vw;
+            background-color: grey;
+            min-width: 280px;
+        }
+    </style>
+
+   <header class="" style="padding-bottom: 106px;">
+    <nav class="navbar navbar-expand-md  fixed-top navbar-dark bg-primary  justify-content-center">
+       <div class="container-fluid ">
+           
+           <a href="" class="navbar-brand " data-bs-toggle="tooltip" aria-label="Brand" data-bs-original-title="Brand">
+               <img src="{{ url_for('static', filename='images/logo1.jpg') }}" class="rounded-circle" alt="" style="width: 80px; height: 80px;">
+           </a>
+           
+           <div class="access1 d-flex flex-row   px-4 pe-0 gap-1 order-2 order-lg-3 order-md-3">
+               <a href="userprofile" data-bs-toggle="modal" title="Profile" data-bs-target="#prof" class="navbar-brand  align-items-center m-0">
+                <img src={{imgdata}} alt="" height="40" width="40" name="profile" class="rounded-circle bg-light border border-info m-0 p-1 ms-1">
+                </a>
+           </div>
+           <button class="navbar-toggler order-3 order-lg-2 order-md-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#colapnavbar" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="navbar-collapse order-1 mx-3 order-4 order-md-2 order-lg-2 collapse" id="colapnavbar" style="">
+                
+                <ul class="navbar-nav align-items-baseline">
+                    <li class="nav-item ">
+                        <a class="nav-link" data-bs-toggle="tooltip" href="home" data-bs-original-title="Home">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" data-bs-toggle="tooltip" href="order" data-bs-original-title="Orders">Orders</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" data-bs-toggle="tooltip" href="products" data-bs-original-title="Products">Products</a>
+                    </li>
+                    
+                </ul>              
+        </div>
+           
+       </div>
+   </nav>
+</header>
+
+  <main class="container-fluid">
+    <section class="s " id="sh">
+        <div class=" p-2 row justify-content-center">
+            <h1 class="col-lg row-sm row-md text-center"> Shop Name</h1>
+            <!---
+            <nav class="col-lg row-sm row-md">
+                <ul class="list-unstyled row">
+                    <li class="col h5 pt-2 "><a href="">Home</a></li>
+                    <li class="col h5 pt-2"><a href="">Products</a></li>
+                    <li class="col h5 pt-2"><a href="">Orders</a></li>
+                    <li class="col h5 pt-2"><a href="">Reviews</a></li>
+                </ul>
+            </nav>
+            --->
+        </div>
+        <br>
+        <div class="d-flex align-items-center justify-content-center">
+            <img class="shop-img" src="{{ url_for('static', filename='images/shop.jpg') }}" alt="">
+        </div>
+        <br>
+        <div id="seller-info" class="row d-flex flex-column align-items-center px-3">
+                <h2 class="col text-center">Seller Name</h2>
+                <p class="row">Description of Seller and Brand Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et laboriosam voluptas vitae sed? Deserunt repellendus natus dolorem dolor necessitatibus iusto magnam deleniti debitis. Ipsa dicta fuga accusantium ex similique soluta.</p>
+        </div>
+        <div id="performance" class="row  gap-3 px-3">
+            <hr><br>
+            <h1 class="text-center">Sales Statistics</h1><br>
+                <div class="salestat row-sm col-md col-lg d-flex flex-column align-items-center bg-warning py-3 border">
+                    <h3>Total Sales</h3>
+                    <p><b>{{totamt}}</b> </p>
+                </div>
+                <div class="salestat row-sm col-md col-lg d-flex flex-column align-items-center bg-warning py-3 border">
+                    <h3>Total Orders</h3>
+                    <p><b>{{countorders}}</b> </p>
+                </div>
+                <div class="salestat row-sm col-md col-lg d-flex flex-column align-items-center bg-warning py-3 border">
+                    <h3> Total Products</h3>
+                    <p> <b>{{prodscount[0]}}</b> </p>
+                </div>
+        </div>
+        <!---
+        <section class="s">
+            <div class="row">
+                <div class="col-8">
+                    <div class="col">
+                        
+                    </div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+                <div class="col-4"></div>
+            </div>
+        </section>
+        <section class="s"></section>
+        <section class="s"></section>
+        <section class="s"></section>
+        --->
+    
+    </section><hr>
+    </main>
+    
+   <br>
+   {% include "modal.html" %}
+
+    {% include "footer.html" %}
+    <script src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/foot.js')}}"></script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Check Your Tweet</title>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h4>Check Your Tweet </h4>
+        <ul>
+            <li>{{name['name']}}</li>
+            <li>{{name['email']}}</li>
+            <li>{{name['phone']}}</li>
+        </ul>
+    </div>
+    <img src="" alt="" id="img123">
+    <div class="container">
+    Name:
+    <input type="text" id="name">
+    <br>
+    Commment:
+    <input type="file" accept="image/jpeg, image/png" id="cmt">
+    <button type="button" onclick="demo()">submit</button> 
+    </div>
+    <script src="{{url_for('static',filename='js/script.js')}}"></script>
+</body>
+</html>

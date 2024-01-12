@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/logo3.jpg')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    
+</head>
+<body>
+    {% include "header.html" %}
+
+    <main class="p-4" style="min-height: 100vh;">
+        <h1>My Wishlist</h1>
+       
+        <table class="table table-responsive">
+            <thead>
+                <th>No.</th>
+                <th>Image</th>
+                <th>Product name</th>
+                <th>Unit Price</th>
+                <th>Options</th>
+            </thead>
+            <tbody id="wishtable">
+
+            </tbody>
+        </table>
+   </main>
+   <br>
+   {% include "modal.html" %}
+
+    {% include "footer.html" %}
+
+   
+   <script src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>
+   <script src="{{url_for('static',filename='js/foot.js')}}"></script>
+       <script src="{{ url_for('static', filename='js/wishlist.js')}}"></script>
+</body>
+</html>
+
+            <!--    <tr>
+                    <td>01</td>
+                    <td><img src="{{ url_for('static', filename=' ') }}"" alt="" height="40px" width="40px"></td>
+                    <td>Lorem ipsum dolor sit amet.</td>
+                    <td><s>$20.00</s> 18.00</td>
+                    <td>In Stock</td>
+                    <td>
+                        <div class=" ">
+                            <button class="btn btn-success col-12 m-1 col-md-5 col-lg-5 h-100 btn1 p-lg-2">Add to cart</button>    
+                            <button class="btn btn-success col-12 m-1 col-md-5 col-lg-5 h-100 p-md-3 p-lg-2  btn1">Remove</button>        
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>01</td>
+                    <td><img src="{{ url_for('static', filename=' ') }}"" alt="" height="40px" width="40px"></td>
+                    <td>Lorem ipsum dolor sit amet.</td>
+                    <td><s>$20.00</s> 18.00</td>
+                    <td>In Stock</td>
+                    <td>
+                        <div class=" ">
+                            <button class="btn btn-success col-12 m-1 col-md-5 col-lg-5 h-100 btn1 p-lg-2">Add to cart</button>    
+                            <button class="btn btn-success col-12 m-1 col-md-5 col-lg-5 h-100 p-md-3 p-lg-2  btn1">Remove</button>        
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>01</td>
+                    <td><img src="{{ url_for('static', filename=' ') }}"" alt="" height="40px" width="40px"></td>
+                    <td>Lorem ipsum dolor sit amet.</td>
+                    <td><s>$20.00</s> 18.00</td>
+                    <td>In Stock</td>
+                    <td>
+                        <div class=" ">
+                            <button class="btn btn-success col-12 m-1 col-md-5 col-lg-5 h-100 btn1 p-lg-2" id="">Add to cart</button>    
+                            <button class="btn btn-success col-12 m-1 col-md-5 col-lg-5 h-100 p-md-3 p-lg-2  btn1" id="">Remove</button>        
+                        </div>
+                    </td>
+                </tr>
+                
+            -->
+                

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/logo3.jpg')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <style>
+        .prod {
+            min-height: 250px;
+            gap: 15px;
+            min-width: 260px;
+            border: 3px solid white;
+            border-radius: 5px;
+        }
+        .prod:hover{
+            border: 5px solid black;
+        }
+        .img1{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        }
+    /*    .active1{
+            background-color: white;
+            color: black;
+        }
+    */    .tooltip-inner{
+            background-color: darkblue;
+            color: white;
+            padding: 10px 15px;
+        }
+       
+    </style>
+    
+</head>
+
+<body class="">
+    
+    <header class="" style="padding-bottom: 106px;">
+        <nav class="navbar navbar-expand-md  fixed-top navbar-dark bg-dark  justify-content-center">
+           <div class="container-fluid ">
+               
+               <a href="" class="navbar-brand " data-bs-toggle="tooltip" aria-label="Brand" data-bs-original-title="Brand">
+                   <img src="{{url_for('static',filename='images/logo1.jpg')}}" class="rounded-circle" alt="" style="width: 80px; height: 80px;">
+               </a>
+               <!--
+                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#prof">profile</button>
+               data-bs-toggle="tooltip"
+                -->
+               <div class="access1 d-flex flex-row   px-4 pe-0 gap-1 order-2 order-lg-3 order-md-3">
+                   <a href="" data-bs-toggle="modal" title="Profile" data-bs-target="#prof" class="navbar-brand  align-items-center m-0">
+                    <img src={{imgdata}} alt="" height="40" width="40" name="profile" class="rounded-circle bg-light border border-info m-0 p-0 ms-1">
+                    </a>
+                 <!---   <a href="./wishlist.html" data-bs-toggle="tooltip" title="Wishlist" class="navbar-brand  align-items-center m-0">
+                        <img src="./../images/heart-solid.svg" width="40" height="40" alt=""  name="wishlist" class="rounded-circle bg-light border border-info m-0 p-1 ms-1">
+                    </a>
+                -->
+                    <a href="/artifusion/buyer/cart" data-bs-toggle="tooltip" class="navbar-brand  align-items-center m-0" aria-label="Cart" data-bs-original-title="Cart">
+                       <img src="{{url_for('static',filename='images/cart.jfif')}}" width="40" height="40" alt="" name="cart" class="rounded-circle bg-light border border-info m-0 p-1 ms-1">
+                    </a>
+               </div>
+               <button class="navbar-toggler order-3 order-lg-2 order-md-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#colapnavbar" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+               <div class="navbar-collapse order-1 mx-3 order-4 order-md-2 order-lg-2 collapse" id="colapnavbar" style="">
+                    
+                    <ul class="navbar-nav align-items-baseline">
+                        <li class="nav-item">
+                            <div  class="nav-link w-100 order-m-3 d-flex align-items-center justify-content-center mt-2">
+                                <input id="inp" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="min-width: 25vw;">
+                                <button class="btn btn-outline-success" 
+                                data-bs-toggle="modal"
+                                data-bs-target="#sear"
+                                type="submit" id="searchbtn">Search</button>
+                             </div>
+                            
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" data-bs-toggle="tooltip" href="/artifusion/buyer/wishlist" data-bs-original-title="Wishlist">Wishlist</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="/" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Category</a>
+                            <ul class=" dropdown-menu dropdown-menu-dark ">
+                                <li class="dropdown-item "><a class="nav-link navstyle " href="/artifusion/buyer#jewelry">Jewelry</a></li>
+                                <li class="dropdown-item "><a class="nav-link navstyle " href="/artifusion/buyer#homedecor">Home Decor</a></li>
+                                <li class="dropdown-item "><a class="nav-link navstyle " href="/artifusion/buyer#pottery">Pottery</a></li>
+                                <li class="dropdown-item "><a class="nav-link navstyle " href="/artifusion/buyer#toys">Toys &amp; games </a></li>
+                                <li class="dropdown-item "><a class="nav-link navstyle " href="/artifusion/buyer#furnitures">Funitures</a></li>
+                                <li class="dropdown-item "><a class="nav-link navstyle " href="/artifusion/buyer#artworks">Art Works</a></li>
+                             </ul>    
+                        </li>
+                    </ul>              
+            </div>
+               
+           </div>
+       </nav>
+    </header>    
+
+    <main class="container-fluid " >
+        <section class="s row bg-primary p-3 align-items-center justify-content-center" id="s1" style="font-size: 22px;" >
+            <div class="col-lg col-md p-3 d-flex flex-column gap-3 order-2 order-sm-2 order-2 order-lg-1 order-md-1">
+                <h1>Welcome to Artisan Treasures</h1>
+                <p>Discover a world of handcrafted wonders and unique creations. Our artisans pour their heart and soul into every piece, making each one a work of art. Explore the exquisite craftsmanship and creativity that sets our products apart.</p>
+                <div class="btn1">
+                    <a href="#top_prod" id="shopnow" class="btn btn-outline-light">Shop Now</a>
+                    <a href="/artifusion/about" id="findout" class="btn btn-outline-light">Find Out More</a>
+                </div>
+            </div>
+            
+            <div class="col-lg col-md  order-1 order-md-1 order-sm-1 order-lg-1">
+                <img src="{{ url_for('static', filename='images/process_craftsmanship2.jpg') }}"  alt="" width="100%" style="
+                border: 5px solid;
+                border-radius: 10px;
+                margin-top: 40px;">
+            </div>
+        </section>
+        <br>
+        <section class="s" id="s2">
+            <div class="img_cont ps-3 pe-0  row d-flex flex-nowrap overflow-auto">
+                <div class="img1 col">
+                    <a href="#jewelry">
+                        <img class="rounded-circle" src="{{ url_for('static', filename='images/jwl1.jfif') }}" height="60" width="60" alt="">
+                    </a>
+                    <p>Jewellery</p>                    
+                </div>
+                <div class="img1 col">
+                    <a href="#homedecor">                    
+                        <img class="rounded-circle" src="{{ url_for('static', filename='images/OIP(7).jfif') }}" height="60" width="60" alt="">
+                    </a>
+                    <p>Home Decor</p>
+                </div>
+                <div class="img1 col">
+                    <a href="#pottery"> 
+                       <img class="rounded-circle" src="{{ url_for('static', filename='images/OIP(3).jfif') }}"  height="60" width="60" alt="">
+                    </a>
+                    <p>Pottery</p>
+                </div>
+                <div class="img1 col">
+                    <a href="#toys">
+                        <img class="rounded-circle" src="{{ url_for('static', filename='images/download (1).jfif') }}" height="60" width="60" alt="">                    
+                    </a>
+                    <p>Toys& Games</p>
+                </div>
+                <div class="img1 col">
+                    <a href="#furnitures">
+                        <img class="rounded-circle" src="{{ url_for('static', filename='images/OIP(4).jfif') }}" height="60" width="60" alt="">
+                    </a>
+                    <p>Furniture</p>
+                </div>
+                <div class="img1 col">
+                    <a href="#artworks">
+                        <img class="rounded-circle" src="{{ url_for('static', filename='images/OIP(5).jfif') }}" height="60" width="60" alt="">
+                    </a>
+                    <p>Artwork</p>
+                </div>
+            </div>
+        </section>
+       <!-- <hr><br>-->
+        <section class="s bg-primary row p-3" id="jewelry">
+            <h1 class="text-center">Jewelry</h1>
+            <div class="jwl d-flex row m-0 p-0 p-sm-5 width-100 justify-content-baseline gap-3" id="jwl">
+            </div>
+        
+        </section>           
+        <section class="s bg-primary row p-3" id="pottery">
+            <h1 class="text-center">Pottery</h1>
+            <div class="pot d-flex row m-0 ps-0 p-sm-5 width-100 justify-content-baseline gap-3" id="pot">
+            </div>
+        
+        </section>
+
+        <section class="s bg-primary row p-3" id="toys">
+            <h1 class="text-center">Toys</h1>
+            <div class="toy d-flex row m-0 p-0 p-sm-5 width-100 justify-content-baseline gap-3" id="toy">
+            </div>
+        
+        </section>
+
+        <section class="s bg-primary row p-3" id="homedecor">
+            <h1 class="text-center">Home Decor</h1>
+            <div class="hd d-flex row m-0 p-0 p-sm-5 width-100 justify-content-baseline gap-3" id="hd">
+            </div>
+        
+        </section>
+
+        <section class="s bg-primary row p-3" id="artworks">
+            <h1 class="text-center">Artworks</h1>
+            <div class="art d-flex row m-0 p-0 p-sm-5 width-100 justify-content-baseline gap-3" id="art">
+            </div>
+        
+        </section>
+
+        <section class="s bg-primary row p-3" id="furnitures">
+            <h1 class="text-center">Furniture</h1>
+            <div class="fur d-flex row m-0 p-0 p-sm-5 width-100 justify-content-baseline gap-3" id="fur">
+            </div>
+        
+        </section>   
+        <br>
+        <section class="s  py-3" id="s2">
+            <div class="img_cont row d-flex  flex-nowrap overflow-auto">
+                <div class="img1 gap-1 col pt-3 pl-2 d-flex flex-column bg-success ">
+                    <img class="rounded-circle" src="{{ url_for('static', filename='images/OIP(8).jfif') }}" height="60" width="60" alt="">
+                    <h4>Best Prices & Offers</h4>
+                    <p>Orders $50 or more</p>
+                </div>
+                <div class="img1 gap-1 col pt-3 d-flex flex-column bg-success ">
+                    <img class="rounded-circle" src="{{ url_for('static', filename='images/download (2).jfif') }}" height="60" width="60" alt="">
+                    <h4>Free Delivery</h4>
+                    <p>24/7 amazing services</p>
+                </div>
+                <div class="img1 gap-1 col pt-3 d-flex flex-column bg-success ">
+                    <img class="rounded-circle" src="{{ url_for('static', filename='images/OIP(10).jfif') }}" height="60" width="60" alt="">
+                    <h4>Great Daily Deal</h4>
+                    <p>When you sign up</p>
+                </div>
+                <div class="img1 gap-1 col pt-3 d-flex flex-column bg-success ">
+                    <img class="rounded-circle" src="{{ url_for('static', filename='images/OIP(9).jfif') }}" height="60" width="60" alt="">                    
+                    <h4>Rapid Delivery</h4>
+                    <p>Within 5 days of order</p>
+                </div>
+                <div class="img1 gap-1 col pt-3 d-flex flex-column bg-success ">
+                    <img class="rounded-circle" src="{{ url_for('static', filename='images/OIP(11).jfif') }}" height="60" width="60" alt="">
+                    <h4>Easy Returns</h4>
+                    <p>Within 30 days</p>
+                </div>
+                
+            </div>
+        </section>
+        <hr>
+    </main>
+    {% include "modal.html" %}
+
+    {% include "footer.html" %}
+
+   
+<br>
+<script src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{url_for('static',filename='js/foot.js')}}"></script>
+<script  src="{{url_for('static',filename='js/home.js')}}"></script>
+<!--
+
+
+-->
+</body>
+</html>

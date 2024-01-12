@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/logo3.jpg')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/cart.css')}}">
+    <style>
+        
+
+    </style>
+</head>
+<body>
+    {% include "header.html" %}
+
+   <main class=".container-fluid p-3 bg-primary" style="min-height: 100vh;">
+    <h1>Shopping Cart</h1>
+    <hr>
+    <div class="subtot p-3">
+        <h4>Subtotal <span name="prod-count"> </span>items <span class="h1" id="tot-price"> </span></h4>
+        <br>
+        <button id="buyAll" class="btn btn-outline-warning">Proceed to buy( <span name="prod-count"> </span> items)</button>
+    </div>
+    <hr>
+   
+  
+    <section id="products"></section>
+</main>
+{% include "modal.html" %}
+
+{% include "footer.html" %}
+
+<script src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{url_for('static',filename='js/foot.js')}}"></script>
+ <script src="{{ url_for('static', filename='js/cart.js') }}"></script>
+</body>
+</html>

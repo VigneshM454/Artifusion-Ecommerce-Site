@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/logo3.jpg')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+</head>
+<body>
+    <h1>cards</h1>
+    <div class="card">
+        <div class="card-body">Basic card</div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="" class="card-link">Card link 1</a>
+            <a href="" class="card-link">Card link 2</a>
+        </div>
+    </div>
+
+    <div class="card bg-success" style="width: 200px; position: relative;">
+        <img src="{{ url_for('static', filename=' ') }}"./image/desktop.jpg" style="width:200px; height: 200px;" alt="some image" class="card-img-top">
+        <div class="card-body">
+            <h4 class="card-title">Atrifusion lazy</h4>
+            <p class="card-text">Lorem ipsum dolor sit amet.</p>
+            <a href="" class="btn btn-outline-info">See profile</a>
+        </div>
+    </div>
+    <div class="card bg-success" style="width: 200px; position: relative;">
+        <img src="{{ url_for('static', filename=' ') }}"./image/desktop.jpg" style="width:200px; height: 200px;" alt="some image" class="card-img-top">
+        <div class="card-body card-img-overlay">
+            <h4 class="card-title">Atrifusion lazy</h4>
+            <p class="card-text">Lorem ipsum dolor sit amet.</p>
+            <a href="" class="btn btn-outline-info">See profile</a>
+        </div>
+    </div>
+</body>
+</html>

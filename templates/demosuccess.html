@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../static/css/bootstrap.min.css">
+</head>
+<body>
+    <div>
+        <h1>hello world</h1>
+    </div>
+
+    <h1>hello world</h1>
+    <style>
+        #pay-success{
+            display: flex;
+            padding: 10px;
+            gap: 10px;
+        }
+        #success{
+            padding: 10px;
+            gap: 10px;
+        }
+        #mhead{
+            padding: 10px;
+            padding-bottom: 0;
+        }
+        #imgdiv{
+            background-size: cover;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <!--
+    <div id="pay-success" class=" modal-fullscreen ">
+        <div class="modal-dialog">
+            <div class="modal-content"  style="border-radius: 15px; border:2px solid black">
+                <div class="modal-header" id="mhead">
+                    <div class="modal-title">Payment</div>
+                    <button class="btn-close" id="btn-close1" type="button" data-bs-dismiss="modal"></button>
+                </div>
+                <hr />
+                <div class="modal-body">
+                    <div id="success" class="d-flex flex-column align-items-center">
+                        <img src="./../static/images/icon-complete.svg" alt="success icon">
+                        <h1>Thank you!</h1>
+                        <div id="pbs" class="d-flex align-items-center flex-column">
+                            <p>Your payment has be successful</p>
+                            <a href="/artifusion/buyer" class="btn btn-primary">Goto Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    --->
+    <div style="background-color: greenyellow;">
+        <div id="imgdiv">
+            <img src="./../static/images/prof.jpg" width="100px" height="100px"/>
+        </div>
+    </div>
+    <script src="./../static/js/bootstrap.min.js"> </script>
+</body>
+</html>
+<!--
+<div id="pay-success" class="modal modal-fullscreen ">
+    <div class="modal-dialog">
+        <div class="modal-content"  style="border-radius: 15px;">
+            <div class="modal-header">
+                <div class="modal-title">Payment</div>
+                <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div id="success" class="d-flex flex-column align-items-center">
+                <img src="{{url_for('static',filename='images/icon-complete.svg')}}" alt="success icon">
+                <h1>Thank you!</h1>
+                <div id="pbs" class="d-flex align-items-center flex-column">
+                  <p>Your payment has be successful</p>
+                <a href="/artifusion/buyer" class="btn btn-primary">Goto Home</a>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+--->
+<!--
+<div id="pay-success" class=" modal-fullscreen1 ">
+    <div class="modal-dialog1">
+        <div class="modal-content1" id="mod-cont"  style="border-radius: 15px; border:2px solid black">
+            <div class="modal-header1" id="mhead">
+                <div class="modal-title1">Payment</div>
+                <button class="btn-close" id="btn-close1" type="button" data-bs-dismiss="modal"></button>
+            </div>
+            <hr />
+            <div class="modal-body1">
+                <div id="success" class="d-flex flex-column align-items-center bg-success">
+                  <img src="{{url_for('static',filename='images/icon-complete.svg')}}" alt="success icon">
+                  <h1>Thank you!</h1>
+                    <div id="pbs" class="d-flex align-items-center flex-column">
+                        <p>Your payment has be successful</p>
+                        <a href="/artifusion/buyer" class="btn btn-primary">Goto Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+-->

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/logo3.jpg')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <style>
+        
+
+    </style>
+</head>
+<body>
+    {% include "adminheader.html" %}
+  
+   <main class="p-3" style="background-color: springgreen;">
+    
+    <section class="sa1" id="sp">
+        <h1>Product Table</h1>
+        
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover table-danger border-dark ">
+                <thead>
+                    <tr>
+                        <th>Product No</th>
+                        <th>Product Image</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Product Desc</th>
+                        <th>Quantity</th>
+                        <th>Remove</th>
+                        <th>Artician Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {% if prodtable|length !=0  %}
+                    {% set arr_length = prodtable|length %}
+                    {#
+                        <p>order data is ,{{prodtable}} </p>                            
+                    #}
+
+                    {% for i in range(arr_length) %}
+                        <tr>
+                            <td>{{i+1}}</td>
+                            <td><img src="{{prodtable[i][0]}}" width="100px" height="100px" style="
+                                border-radius: 25px;
+                                border: 2px solid black;"  /></td>
+                            <td>{{prodtable[i][1]}}</td>
+                            <td>₹{{prodtable[i][2]}}</td>
+                            <td>{{prodtable[i][3]}}</td>
+                            <td>{{prodtable[i][4]}}</td>
+                            <td><a class="btn btn-primary" href="">Remove</a></td>
+                            <td>{{prodtable[i][5]}}</td>                        
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <p>no orders so far</p>
+                {% endif %}
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+   </main>
+   <br>
+    {% include "footer.html" %}
+    {% include "modal.html" %}
+
+    <script src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/foot.js')}}"></script>
+ </body>
+</html>

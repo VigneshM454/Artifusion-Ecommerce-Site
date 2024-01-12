@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/logo3.jpg')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <style>
+        .bg1{
+            width: 100%;
+            background: url("{{url_for('static',filename='images/background-img.jfif')}}");
+          /*url("../images/background-img.jfif");
+        */    background-size: cover;
+        background: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg1 ">
+        <div class="col text-center">
+            <img src="{{ url_for('static', filename='images/artimg-2.png') }}" alt="" width="100%" style="height: 70vh;max-width: 350px;">
+            <h2>Welcome to Atrifusion World</h2>
+            <p>Choose your role:</p>
+            <div class="row d-flex justify-content-around">
+                <button type="button" id="buy" class="col-5 btn btn-light btn-outline-dark border-2" data-bs-toggle="modal" data-bs-target="#login">
+                    <div class="h1">I'm a Buyer</div>
+                    <p>Discover new products</p>
+                </button>
+                <button type="button" id="sell" class="col-5 btn btn-light btn-outline-dark border-2" data-bs-toggle="modal" data-bs-target="#login">
+                    <div class="h1">I'm a Seller</div>
+                    <p>Sell your artisian products</p>
+                </button>
+            </div>
+            <br><br>
+        </div>
+    </div>
+    <!--login-->
+    <div id="login" class="modal  modal-fullscreen">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">Atrifusion</div>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                <!--Login page-->
+                    <div class="slin p-2">
+                        <form action="" id="login-form" class="signin">
+                            <h2 id="h2 mb-1">Sign in</h2>
+                            <div class="form-floating mb-3 mt-3">
+                                <input required type="email" class="form-control" id="email"   name="email">
+                                <label for="email">Email</label>
+                              </div>
+                            <div class="form-floating mb-3 mt-3">
+                                <input required type="password" class="form-control" id="pwd"  name="pwd">
+                                <label for="pwd">Password</label>
+                              </div>
+                            <button type="submit" class="my-3 btn btn-outline-success w-100" >Login</button>
+                          </form>
+
+                       <div class="d-flex justify-content-center align-items-center">
+                        <hr class="w-25"><p>New to Atrifusion</p><hr class="w-50">
+                       </div>
+                        <button class="login btn btn-outline-info w-100" data-bs-toggle="modal" data-bs-target="#signup">
+                            Create Your New Account
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!---Sign up / create accound page--> 
+    <div id="signup" class="modal  modal-fullscreen" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Create Account</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="signin-form" enctype="multipart/form-data">
+                    <div class="d-flex  justify-content-center">
+                        <img src="{{url_for('static',filename='images/user-solid.svg')}}" alt="" height="100" width="100" class="rounded-circle border border-info p-1">
+                    </div>
+            <!---   
+                    <div class="form-floating mb-3 mt-3">
+                        <input alt="upload image" type="file" class="form-control" id="profimg" name="profimg">
+                        <label for="name">Profile Pic</label>
+                    </div>
+           -->
+                    <div class="form-floating mb-3 mt-3">
+                        <input type="text" required class="form-control" id="fname" placeholder="Enter First Name" name="fname">
+                        <label for="name">First Name</label>
+                    </div>
+                    <div class="form-floating mb-3 mt-3">
+                        <input type="text" required class="form-control" id="lname" placeholder="Enter Last Name" name="lname">
+                        <label for="last">Last Name</label>
+                    </div>
+                    
+                    <div id="dynamo" >
+                        <div class="form-floating mb-3 mt-3">
+                          <input type="text" required class="form-control" id="shop" placeholder="Enter your Shop Name" name="shop">
+                          <label for="last">Shop-Name</label>
+                        </div>
+                        <div class=" form-floating mb-3 mt-3">
+                          <h4>Select your product category</h4>
+                          <div class="form-check container col-12 w-100">
+                            <div class="col-3">
+                              <input  type="checkbox" name="d" class="form-check-input"  value="jewelry" id="jw">
+                              <label class="form-check-label" for="jw">Jewelry</label>
+                            </div>
+                            <div class="col-3">
+                              <input  type="checkbox" name="d" class="form-check-input"  value="homedecor" id="hd">
+                              <label class="form-check-label" for="hd">Home Decor</label>    
+                            </div>
+                            <div class="col-3">
+                              <input  type="checkbox" name="d"  class="form-check-input" value="pottery" id="pot">
+                              <label class="form-check-label" for="pot">Pottery</label>    
+                            </div>
+                            <div class="col-3">
+                              <input  type="checkbox" name="d"  class="form-check-input" value="toys" id="toy">
+                              <label class="form-check-label" for="toy">Toys & Games</label>    
+                            </div>
+                            <div class="col-3">
+                              <input  type="checkbox" name="d"  class="form-check-input" value="furniture" id="fur">
+                              <label class="form-check-label" for="fur">Furnitures</label>    
+                            </div>
+                            <div class="col-3">
+                              <input  type="checkbox" name="d"  class="form-check-input" value="art" id="art">
+                              <label class="form-check-label" for="art">Art Works</label>    
+                            </div>
+                      
+                          </div>
+                        </div>
+                    </div>
+                   
+                    <div id="refer" class="form-floating mb-3 mt-3">
+                        <input type="email" required class="form-control" id="email" placeholder="Enter email" name="email">
+                        <label for="email">Email</label>
+                    </div>
+                      <div class="form-floating mt-3 mb-3">
+                        <input type="password" required class="form-control" id="pwd" placeholder="Enter password" name="password">
+                        <label for="pwd">Password</label>
+                      </div>
+                      <div class="form-floating mt-3 mb-3">
+                        <input type="tel" required class="form-control" id="phoneno" placeholder="Enter Phone number" name="phoneno">
+                        <label for="phoneno">Contact Number</label>
+                      </div>
+                      <div class="form-floating mt-3 mb-3">
+                        <input type="text" required class="form-control"  id="addr" placeholder="Enter Address" name="addr">
+                        <label for="addr">Address</label>
+                      </div>
+                      <div class="d-flex gap-2 mb-2">
+                        <input  type="checkbox" name="terms" required class="form-check-input" checked  value="agree" id="terms">
+                        <label id="p" for="terms">By continuing, you agree to Our Conditions of Use and Privacy Policy as a buyer</label>  
+                      </div>
+
+                      <button id="cbuyer" class="btn btn-outline-success w-100" type="submit">Create</button>
+                  
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/login.js')}}"></script>
+</body>
+</html>
+
+<!----
+    <div class="container border border-primary p-3 mt-5">
+        <img src="{{ url_for('static', filename=' ') }}"" alt="" class="bg-dark pb-3 " style="width: 50%; height: 300px; ">
+        <br>
+        <div>
+            <a href="home" class="btn btn-outline-primary w-100">Buyer</a>
+            <div class="row d-flex align-items-center p-3 gap-0">
+                <hr class="col hr p-0">
+                <h4 class="col-1 p-0 px-2 pb-3"> OR</h4>
+                <hr class="col p-0">
+            </div>
+            <a href="sellerhome" class="btn btn-outline-primary w-100">Seller</a>
+        </div>
+    </div>
+-->
+
+    <!--login
+        <button class="btn w-100 btn-outline-info" data-bs-toggle="modal" data-bs-target="#signup">create</button>
+        <button class="btn w-100 btn-outline-info" data-bs-toggle="modal" data-bs-target="#login">Login/Signup</button>
+    -->
+
+       <!---             <form action="">
+                        <div class="form-floating mb-3 mt-3">
+                            <input type="email" class="form-control" id="firstname" placeholder="Enter First Name" name="fname">
+                            <label for="name">Email</label>
+                          </div>
+                        <div class="form-floating mb-3 mt-3">
+                            <input type="password" class="form-control" id="lastname" placeholder="Enter Last Name" name="lname">
+                            <label for="last">Password</label>
+                          </div>
+                        <button class="btn btn-outline-success">Login</button>
+                    </form>
+                -->
+    <!--
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>--->
+          
